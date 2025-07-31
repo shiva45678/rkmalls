@@ -152,6 +152,16 @@
             text-align: center;
             padding: 0 20px;
         }
+        
+        /* --- NEW STYLE FOR HERO TEXT BOX --- */
+        .hero-text-box {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
         #hero h1 {
             font-size: 3rem;
@@ -161,7 +171,7 @@
         #hero .tagline {
             font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin-top: 10px;
         }
         
         #hero .hero-buttons {
@@ -220,7 +230,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            justify-content: center; /* Helps center the items if there's space */
+            justify-content: center;
         }
         .store-card {
             background: var(--white-color);
@@ -354,6 +364,7 @@
             }
             #hero h1 { font-size: 2.5rem; }
             #hero .tagline { font-size: 1.2rem; }
+            .hero-text-box { padding: 20px; }
             
             #about .about-content, 
             #visit .visit-content,
@@ -362,7 +373,7 @@
             }
             
             #about img, #visit iframe {
-                margin-bottom: 30px;
+                margin-top: 30px;
             }
             
             section h2 { font-size: 2rem; }
@@ -390,9 +401,13 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <h1>Your Style, Your Store</h1>
-        <h2 style="color: var(--primary-color);">RK Family Shopping Mall, Nandigama</h2>
-        <p class="tagline">Trendy Fashion | Same-Day Delivery | Open Till 10 PM</p>
+        <!-- --- NEW TEXT BOX WRAPPER --- -->
+        <div class="hero-text-box">
+            <h1>Your Style, Your Store</h1>
+            <h2 style="color: var(--primary-color);">RK Family Shopping Mall, Nandigama</h2>
+            <p class="tagline">Trendy Fashion | Same-Day Delivery | Open Till 10 PM</p>
+        </div>
+        
         <div class="hero-buttons">
             <a href="#stores" class="btn">Explore Stores</a>
             <a href="#contact" class="btn btn-secondary">Book Home Shopping</a>
@@ -453,7 +468,6 @@
             <p class="section-subtitle">A curated mix of local retailers to meet your needs.</p>
             <div class="stores-grid">
                 <div class="store-card">
-                    <!-- --- SAREE IMAGE UPDATED --- -->
                     <img src="https://www.shalvifashion.com/images/products/sarees.jpg" alt="A beautiful display of colorful Indian sarees">
                     <div class="store-card-content">
                         <h3>Amaravati Saree House</h3>
@@ -467,7 +481,6 @@
                         <p class="category">T-Shirts, Jeans, Shirts, Trousers</p>
                     </div>
                 </div>
-                <!-- --- GANESH BANIAN STORES CARD REMOVED --- -->
             </div>
         </div>
     </section>
