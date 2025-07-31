@@ -123,12 +123,12 @@
             object-position: center;
         }
 
-        #navbar ul {
+        #navbar ul.desktop-nav {
             display: flex;
             list-style: none;
         }
         
-        #navbar ul li a {
+        #navbar ul.desktop-nav li a {
             padding: 1rem;
             text-decoration: none;
             color: var(--dark-color);
@@ -136,8 +136,73 @@
             transition: color 0.3s ease;
         }
 
-        #navbar ul li a:hover {
+        #navbar ul.desktop-nav li a:hover {
             color: var(--primary-color);
+        }
+
+        /* Mobile Menu Button (Hamburger) */
+        .menu-btn {
+            display: none; /* Hidden on desktop */
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--dark-color);
+        }
+        
+        /* Side Panel Navigation */
+        .side-panel {
+            position: fixed;
+            top: 0;
+            left: -280px; /* Start off-screen */
+            width: 280px;
+            height: 100%;
+            background: var(--dark-color);
+            color: var(--white-color);
+            padding: 40px 20px;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-panel.open {
+            left: 0; /* Slide in */
+        }
+        
+        .side-panel .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--white-color);
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+        
+        .side-panel a {
+            color: var(--white-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 15px 0;
+            border-bottom: 1px solid #555;
+        }
+
+        .side-panel a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Overlay for Side Panel */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1999;
         }
 
         /* Hero Section */
@@ -153,7 +218,6 @@
             padding: 0 20px;
         }
         
-        /* --- NEW STYLE FOR HERO TEXT BOX --- */
         .hero-text-box {
             background: rgba(0, 0, 0, 0.4);
             padding: 30px;
@@ -352,16 +416,14 @@
         
         /* Mobile Styles */
         @media(max-width: 768px) {
-            #navbar {
-                flex-direction: column;
+            /* Hide desktop nav, show mobile menu button */
+            #navbar ul.desktop-nav {
+                display: none;
             }
-            #navbar ul {
-                margin-top: 10px;
-                padding: 10px;
-                background: var(--light-color);
-                width: 100%;
-                justify-content: center;
+            .menu-btn {
+                display: block;
             }
+
             #hero h1 { font-size: 2.5rem; }
             #hero .tagline { font-size: 1.2rem; }
             .hero-text-box { padding: 20px; }
@@ -372,7 +434,12 @@
                 grid-template-columns: 1fr;
             }
             
-            #about img, #visit iframe {
+            #about img {
+                order: -1; /* Move image above text on mobile */
+                margin-bottom: 30px;
+            }
+
+            #visit iframe {
                 margin-top: 30px;
             }
             
@@ -387,21 +454,37 @@
     <header id="main-header">
         <nav id="navbar" class="container">
             <a href="#hero" class="logo">
-                <img src="https://i.ibb.co/4nbt8KGP/Screenshot-2025-07-31-171646.png" alt="RK Mall Logo">
+                <!-- --- LOGO IMAGE UPDATED HERE --- -->
+                <img src="https://i.postimg.cc/Y0CVVvk2/Screenshot-2025-07-31-171646-min.png" alt="RK Mall Logo">
             </a>
-            <ul>
+            <!-- Desktop Navigation -->
+            <ul class="desktop-nav">
                 <li><a href="#stores">Stores</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#visit">Visit Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
+    <!-- Side Panel for Mobile -->
+    <div id="side-panel" class="side-panel">
+        <button id="close-btn" class="close-btn">×</button>
+        <a href="#stores">Stores</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit Us</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
     <!-- Hero Section -->
     <section id="hero">
-        <!-- --- NEW TEXT BOX WRAPPER --- -->
         <div class="hero-text-box">
             <h1>Your Style, Your Store</h1>
             <h2 style="color: var(--primary-color);">RK Family Shopping Mall, Nandigama</h2>
@@ -456,7 +539,7 @@
                     <p>We are dedicated to supporting our community by partnering with local businesses and ensuring a friendly, welcoming shopping atmosphere for everyone.</p>
                     <p class="owner">Proudly owned by Doddipatla Koteswara Rao</p>
                 </div>
-                <img src="https://images.unsplash.com/photo-1557186425-0c2ba529bbc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Bright and modern interior of a clothing store">
+                <img src="https://i.ibb.co/cckNPSDk/486749163-1215868127210924-2093367642962644031-n.jpg" alt="The storefront of RK Family Shopping Mall in Nandigama">
             </div>
         </div>
     </section>
@@ -563,6 +646,34 @@
     <footer id="main-footer">
         <p>© 2023 RK Family Shopping Mall, Nandigama. All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript for Side Panel Functionality -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const sidePanel = document.getElementById('side-panel');
+        const overlay = document.getElementById('overlay');
+        const panelLinks = document.querySelectorAll('.side-panel a');
+
+        function openPanel() {
+            sidePanel.classList.add('open');
+            overlay.style.display = 'block';
+        }
+
+        function closePanel() {
+            sidePanel.classList.remove('open');
+            overlay.style.display = 'none';
+        }
+
+        menuBtn.addEventListener('click', openPanel);
+        closeBtn.addEventListener('click', closePanel);
+        overlay.addEventListener('click', closePanel);
+        
+        // Close panel when a link is clicked
+        panelLinks.forEach(link => {
+            link.addEventListener('click', closePanel);
+        });
+    </script>
 
 </body>
 </html>
