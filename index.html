@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RK Family Shopping Mall | Nandigama</title>
+    <title>RK MALL | Nandigama</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,7 +66,7 @@
             position: relative;
         }
         
-        /* --- NEW: Decorative underline for section titles --- */
+        /* Decorative underline for section titles */
         section h2::after {
             content: '';
             position: absolute;
@@ -133,7 +133,6 @@
             justify-content: space-between;
             align-items: center;
             height: var(--header-height);
-            /* --- NEW: Padding added to the container for button spacing --- */
             padding: 0.5rem 20px;
         }
         
@@ -184,7 +183,7 @@
             transform: translateX(-50%) scaleX(1);
         }
 
-        /* --- NEW: Improved Side Panel Button (Hamburger) --- */
+        /* Improved Side Panel Button (Hamburger) */
         .menu-btn {
             display: none;
             position: relative;
@@ -227,7 +226,7 @@
             background: var(--white-color);
         }
         
-        /* --- NEW: Improved Side Panel Navigation (opens from right) --- */
+        /* Improved Side Panel Navigation (opens from right) */
         .side-panel {
             position: fixed;
             top: 0;
@@ -248,7 +247,7 @@
             right: 0; /* Slide in from right */
         }
         
-        .side-panel .close-btn { /* This can be removed, using animated hamburger now */
+        .side-panel .close-btn { 
             display: none;
         }
         
@@ -285,7 +284,7 @@
             opacity: 1;
         }
 
-        /* --- NEW: Scroll Animation Classes --- */
+        /* Scroll Animation Classes */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -578,7 +577,7 @@
                 <li><a href="#visit">Visit Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <!-- --- NEW: Animated Mobile Menu Button --- -->
+            <!-- Animated Mobile Menu Button -->
             <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
                 <span></span>
                 <span></span>
@@ -589,8 +588,6 @@
 
     <!-- Side Panel for Mobile (Now opens from the right) -->
     <div id="side-panel" class="side-panel">
-        <!-- Close button is now the animated hamburger, this is a fallback -->
-        <button id="close-btn" class="close-btn" style="display:none;">×</button>
         <a href="#stores">Stores</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
@@ -603,7 +600,7 @@
     <section id="hero">
         <div class="hero-text-box animate-on-scroll">
             <h1>Your Style, Your Store</h1>
-            <h2 style="color: var(--primary-color);">RK Family Shopping Mall, Nandigama</h2>
+            <h2 style="color: var(--primary-color);">RK MALL | Nandigama</h2>
             <p class="tagline">Trendy Fashion | Same-Day Delivery | Open Till 10 PM</p>
         </div>
         
@@ -651,11 +648,11 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Serving Nandigama since 2017 with quality fashion.</h3>
-                    <p>RK Family Shopping Mall is Nandigama's one-stop destination for readymade garments. Our mission is to provide stylish, affordable clothing with unmatched convenience for local residents and families. We offer a curated selection of fashion for men, women, and children.</p>
+                    <p>RK MALL is Nandigama's one-stop destination for readymade garments. Our mission is to provide stylish, affordable clothing with unmatched convenience for local residents and families. We offer a curated selection of fashion for men, women, and children.</p>
                     <p>We are dedicated to supporting our community by partnering with local businesses and ensuring a friendly, welcoming shopping atmosphere for everyone.</p>
-                    <p class="owner">Proudly owned by Doddipatla Koteswara Rao</p>
+                    <p class="owner">Proudly owned by Nookeswara Rao</p>
                 </div>
-                <img src="https://i.ibb.co/cckNPSDk/486749163-1215868127210924-2093367642962644031-n.jpg" alt="The storefront of RK Family Shopping Mall in Nandigama">
+                <img src="https://i.ibb.co/cckNPSDk/486749163-1215868127210924-2093367642962644031-n.jpg" alt="The storefront of RK MALL in Nandigama">
             </div>
         </div>
     </section>
@@ -707,7 +704,7 @@
                 </div>
                 <div class="address-info">
                     <h3>Our Location</h3>
-                    <p><i class="fas fa-map-marker-alt"></i><strong>RK Family Shopping Mall</strong></p>
+                    <p><i class="fas fa-map-marker-alt"></i><strong>RK MALL</strong></p>
                     <p>Auto Nagar, Andhra Bank Street,</p>
                     <p>Nandigama, Krishna District,</p>
                     <p>Andhra Pradesh – 521185</p>
@@ -760,10 +757,10 @@
 
     <!-- Footer -->
     <footer id="main-footer">
-        <p>© 2023 RK Family Shopping Mall, Nandigama. All Rights Reserved.</p>
+        <p>© 2023 RK MALL | Nandigama. All Rights Reserved.</p>
     </footer>
 
-    <!-- --- NEW/UPDATED JavaScript for Side Panel & Animations --- -->
+    <!-- JavaScript for Side Panel & Animations -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuBtn = document.getElementById('menu-btn');
@@ -794,7 +791,7 @@
                 link.addEventListener('click', togglePanel);
             });
 
-            // --- NEW: Intersection Observer for scroll animations ---
+            // Intersection Observer for scroll animations
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
             const observer = new IntersectionObserver((entries) => {
