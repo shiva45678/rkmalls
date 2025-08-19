@@ -365,6 +365,53 @@
             font-size: 1.3rem;
         }
         
+        /* Event Shopping Section */
+        #events-shopping .events-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        #events-shopping .event-item {
+            background: var(--white-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: grid;
+            grid-template-columns: 350px 1fr; /* Image width increased */
+            align-items: center;
+        }
+
+        #events-shopping .event-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+
+        #events-shopping .event-image {
+            width: 100%;
+            height: 280px; 
+            object-fit: cover;
+        }
+
+        #events-shopping .event-content {
+            padding: 30px;
+            text-align: left;
+        }
+        
+        #events-shopping .event-content i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        #events-shopping .event-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+
         /* About Section */
         #about {
             background: var(--light-color);
@@ -547,6 +594,25 @@
             #contact .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* Improved Mobile view for Occasions Section */
+            #events-shopping .event-item {
+                grid-template-columns: 1fr; /* Stack image and text */
+            }
+            #events-shopping .event-image {
+                height: 220px; /* Adjust height for mobile */
+                border-radius: 10px 10px 0 0; /* Rounded corners on top */
+            }
+            #events-shopping .event-content {
+                padding: 25px;
+                text-align: center;
+            }
+            #events-shopping .event-content i {
+                font-size: 2.2rem;
+            }
+            #events-shopping .event-content h3 {
+                font-size: 1.4rem;
+            }
             
             #about img {
                 order: -1;
@@ -640,6 +706,44 @@
         </div>
     </section>
 
+    <!-- Event Shopping Section -->
+    <section id="events-shopping" style="background: var(--light-color);">
+        <div class="container">
+            <h2 class="animate-on-scroll">For Every Cherished Occasion</h2>
+            <p class="section-subtitle animate-on-scroll">Your one-stop destination for all South Indian functions and events.</p>
+            <div class="events-grid">
+                <!-- Event Item 1 -->
+                <div class="event-item animate-on-scroll">
+                    <img src="https://images.squarespace-cdn.com/content/v1/52ed3507e4b041396187d22b/1626267460501-TCCX9DWYKS1RXXZSFZ0H/Telugu+Wedding+ritual++PRADHANAM-1.jpg" alt="Couple in traditional wear for pre-wedding shopping" class="event-image">
+                    <div class="event-content">
+                        <i class="fa-solid fa-ring"></i>
+                        <h3>Pre-Wedding Shopping</h3>
+                        <p>Find the perfect outfits for your engagement, sangeet, and other pre-wedding ceremonies.</p>
+                    </div>
+                </div>
+                <!-- Event Item 2 -->
+                <div class="event-item animate-on-scroll" style="transition-delay: 0.1s;">
+                    <img src="https://utsav.gov.in/public/uploads/event_picture_image/event_501/16582167301406292907.jpg" alt="Family celebrating a festival with lights" class="event-image">
+                    <div class="event-content">
+                        <i class="fa-solid fa-om"></i>
+                        <h3>Festive Celebrations</h3>
+                        <p>Dress your best for Sankranti, Ugadi, Diwali, and all traditional South Indian festivals.</p>
+                    </div>
+                </div>
+                <!-- Event Item 3 -->
+                <div class="event-item animate-on-scroll" style="transition-delay: 0.2s;">
+                    <img src="https://anuki.in/cdn/shop/articles/maxresdefault_1280x.jpg" alt="Happy family in traditional attire at a function" class="event-image">
+                    <div class="event-content">
+                        <i class="fa-solid fa-gifts"></i>
+                        <h3>Family Functions</h3>
+                        <p>From housewarmings to birthdays, we have the perfect attire for every family gathering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- About Us Section -->
     <section id="about">
         <div class="container animate-on-scroll">
@@ -671,7 +775,7 @@
                     </div>
                 </div>
                 <div class="store-card animate-on-scroll" style="transition-delay: 0.1s;">
-                    <img src="https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Stylish men's clothing including shirts and sweaters">
+                    <img src="https://www.weaversindia.co.in/cdn/shop/files/0029272_4_copy2.webp" alt="Stylish men's clothing including shirts and sweaters">
                     <div class="store-card-content">
                         <h3>Men's & Boys' Clothing</h3>
                         <p class="category">T-Shirts, Jeans, Shirts, Trousers</p>
@@ -684,7 +788,7 @@
     <!-- Offers Section -->
     <section id="offers">
         <div class="container animate-on-scroll">
-            <h2>Festive Offers & Sales</h2>
+            <h2 style="color: red;">Festive Offers & Sales</h2>
             <p class="section-subtitle">Don't miss out on our exciting deals!</p>
             <div class="offer-box">
                 <h3>Monsoon Sale!</h3>
@@ -700,7 +804,7 @@
             <p class="section-subtitle">Easily accessible from all parts of Nandigama.</p>
             <div class="visit-content">
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30656.71217088921!2d80.27608889163013!3d16.77663583648113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3676b252174987%3A0x43a854228966a6e!2sNandigama%2C%20Andhra%20Pradesh%20521185!5e0!3m2!1sen!2sin!4v1671542130359!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=16.774827815858625,80.28628363529383&hl=en&z=17&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="address-info">
                     <h3>Our Location</h3>
@@ -728,15 +832,23 @@
                     <br>
                     <div class="contact-info-item">
                         <i class="fas fa-phone"></i>
-                        <span>[Insert Phone Number Here]</span>
+                        <a href="tel:06305534594">063055 34594</a>
                     </div>
                     <div class="contact-info-item">
                         <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/910000000000" target="_blank">Chat with us on WhatsApp</a>
+                        <a href="https://wa.me/916305534594" target="_blank">Chat with us on WhatsApp</a>
                     </div>
                     <div class="contact-info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>[Insert Email Address Here]</span>
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/rkmall_nandigama/" target="_blank">Follow us on Instagram</a>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/Rkmallnandigama/" target="_blank">Like us on Facebook</a>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-store"></i>
+                        <a href="https://share.google/TXkboqkDFwdEbXxpw" target="_blank">View our Google Business Profile</a>
                     </div>
                 </div>
                 <form class="contact-form">
